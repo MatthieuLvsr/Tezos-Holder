@@ -19,8 +19,8 @@ test = @$(LIGO) run test $(project_root) ./test/$(1)
 .PHONY: test compile
 compile: ## compile contracts to Michelson
 	@if not exist "compiled" mkdir compiled
-	@$(call compile,test.mligo,test.tz, -m C)
-	@$(call compile,test_michelson.mligo,test_michelson.mligo.json, -m C --michelson-format json)
+	@$(call compile,Token.mligo,Token.mligo.json, -m C --michelson-format json)
+	@$(call compile,Caller.mligo,Caller.mligo.json, -m C --michelson-format json)
 
 test: ## run tests (SUITE=asset_approve make test)
 ifndef SUITE
