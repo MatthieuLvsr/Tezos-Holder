@@ -24,8 +24,7 @@ compile: ## compile contracts to Michelson
 
 test: ## run tests (SUITE=asset_approve make test)
 ifndef SUITE
-	@$(call test,test.test.mligo)
-	@$(call test,test_michelson.test.mligo)
+	@$(call test,Token.test.mligo)
 
 else
 	@$(call test,$(SUITE).test.mligo)
