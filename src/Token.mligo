@@ -15,3 +15,7 @@ type ret = operation list * storage
 [@entry]
 let transfer (t: FA2.SingleAssetExtendable.TZIP12.transfer) (s: storage): ret =
   FA2.SingleAssetExtendable.transfer t s
+
+[@entry]
+let update_operators (updates : FA2.SingleAssetExtendable.TZIP12.update_operators) (s : storage): ret =
+  FA2.SingleAssetExtendable.update_operators updates s
