@@ -1,0 +1,20 @@
+{
+  "name": "tezos-holder-deployer",
+  "version": "1.0.0",
+  "description": "deploy package",
+  "main": "index.ts",
+  "scripts": {
+    "deploy": "tsc && node deploy.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "typescript": "^5.4.4"
+  },
+  "dependencies": {
+    "@taquito/signer": "^19.1.0",
+    "@taquito/taquito": "^19.1.0",
+    "@taquito/utils": "^19.1.0"
+  }
+}
