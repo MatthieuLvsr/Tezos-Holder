@@ -12,6 +12,8 @@ endif
 compile = $(LIGO) compile contract  --project-root ./src ./src/$(1) -o ./compiled/$(2) $(3) 
 # ^ Compile contracts to Michelson or Micheline
 
+install = $(LIGO) install
+
 test = @$(LIGO) run test $(project_root) ./test/$(1)
 # ^ run given test file
 
@@ -32,6 +34,8 @@ else
 	@$(call test,$(SUITE).test.mligo)
 endif
 
+install: ## install dependencies
+	@$(call install)
 
 deploy: deploy_deps deploy.js
 
