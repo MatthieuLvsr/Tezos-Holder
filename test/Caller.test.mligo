@@ -137,6 +137,7 @@ let assert_caller_balances
   let _ = Test.transfer_to_contract_exn contr (Deposit 5n ) 0tez in
   let () = assert_caller_balances caller_addr (owner1, 5n) in
   let () = assert_balances token_addr ((owner1, 5n), (owner2, 10n), (owner3, 10n)) in
+  let () = Test.log(Test.get_storage caller_addr) in
   ()
 
   let test_deposit_fail_date_too_early =
