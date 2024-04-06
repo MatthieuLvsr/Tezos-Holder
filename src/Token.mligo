@@ -1,0 +1,17 @@
+#import "@ligo/fa/lib/main.mligo" "FA2"
+
+
+type extension = {
+    admin : address
+}
+
+type operator = address
+
+type operators = (address, operator set) big_map
+
+type storage = extension FA2.SingleAssetExtendable.storage
+type ret = operation list * storage
+
+[@entry]
+let transfer (t: FA2.SingleAssetExtendable.TZIP12.transfer) (s: storage): ret =
+  FA2.SingleAssetExtendable.transfer t s
